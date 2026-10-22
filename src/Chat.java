@@ -16,6 +16,7 @@ public class Chat {
             PrintWriter salida = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
+            System.out.println("los odio");
         } catch (IOException e) {
             e.printStackTrace();
         }
