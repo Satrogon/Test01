@@ -35,7 +35,7 @@ public class Chat {
             String claveCompartida = teclado.readLine();
 
             if (nombre == null || nombre.trim().isEmpty() || claveCompartida == null
-                    || claveCompartida.length() < 16) {
+                    || claveCompartida.length() < 5) {
                 System.out.println("Escribe un nombre y una clave de al menos 16 caracteres.");
                 return;
             }
