@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Chat privado con mensajes cifrados entre participantes.">
+  <title>Chat privado</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="chat-app">
+    <header class="chat-header">
+      <div class="brand-mark" aria-hidden="true">C</div>
+      <div>
+        <h1>Chat privado</h1>
+        <p>Los mensajes se cifran en tu dispositivo.</p>
+      </div>
+      <span class="security-badge"><span aria-hidden="true">●</span> Privado</span>
+    </header>
+
+    <form id="setup-form" class="setup-form">
+      <div class="intro">
+        <h2>Entrar al chat</h2>
+        <p>Usa la misma clave secreta que el resto de participantes.</p>
+      </div>
+      <label for="name-input">Tu nombre</label>
+      <input id="name-input" name="name" maxlength="40" autocomplete="nickname" placeholder="Por ejemplo, Iván" required>
+      <label for="key-input">Clave secreta compartida</label>
+      <input id="key-input" name="key" type="password" autocomplete="off" placeholder="Escribe la clave" required>
+      <button id="join-button" class="button button-primary" type="submit">Entrar al chat</button>
+      <p class="privacy-note">La clave no se envía al servidor.</p>
+    </form>
+
+    <section id="conversation" class="conversation hidden" aria-label="Conversación">
+      <div id="messages" class="messages" aria-live="polite" aria-relevant="additions"></div>
+      <form id="composer-form" class="composer">
+        <label class="visually-hidden" for="message-input">Escribe un mensaje</label>
+        <input id="message-input" name="message" maxlength="4000" autocomplete="off" placeholder="Escribe un mensaje…" required>
+        <button id="send-button" class="button button-primary send-button" type="submit" aria-label="Enviar mensaje">
+          <span>Enviar</span><span aria-hidden="true">↑</span>
+        </button>
+      </form>
+    </section>
+
+    <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
